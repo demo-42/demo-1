@@ -1,0 +1,19 @@
+name: Tests Compatibility
+
+on:
+  workflow_dispatch:
+  # TODO add schedule
+
+jobs:
+  renovate:
+    name: Renovate
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: Self-hosted Renovate
+        uses: renovatebot/github-action@v46.0.2
+        env:
+          LOG_LEVEL: debug
+        with:
+          configurationFile: renovate.json
+          token: ${{ secrets.RENOVATE_TOKEN }}
