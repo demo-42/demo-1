@@ -20,12 +20,31 @@
     ],
     "packageRules": [
         {
-            "description": "Package Rules for Splunk Docker images",
-            "matchDatasources": [ "docker" ],
-            "matchPackageNames": [ "splunk/splunk" ],
-            "matchUpdateTypes": [ "major", "minor" ],
+            "description": "Open PR of Splunk Docker minor releases",
+            "matchDatasources": [
+                "docker"
+            ],
+            "matchPackageNames": [
+                "splunk/splunk"
+            ],
+            "matchUpdateTypes": [
+                "minor"
+            ],
+            "groupName": "Splunk Minor Releases"
+        },
+        {
+            "description": "Notify about new Splunk Docker major releases via Dependency Dashboard",
+            "matchDatasources": [
+                "docker"
+            ],
+            "matchPackageNames": [
+                "splunk/splunk"
+            ],
+            "matchUpdateTypes": [
+                "major"
+            ],
             "dependencyDashboardApproval": true,
-            "groupName": "splunk releases"
+            "groupName": "Splunk Major Releases"
         }
     ]
 }
