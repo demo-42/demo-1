@@ -9,18 +9,18 @@
     "customManagers": [
         {
             "customType": "regex",
-            "managerFilePatterns": [
+            "fileMatch": [
                 "^\\.github/workflows/.+\\.ya?ml$"
             ],
             "matchStrings": [
-                "-\\s+\"(?<currentValue>[^\\s]+)\"\\s+#\\s+renovate:\\s+datasource=(?<datasource>[^\\s]+)\\s+depName=(?<depName>[^\\s]+)$"
+                "-\\s+\"(?<currentValue>[^\"]+)\"\\s+#\\s+renovate:\\s+datasource=(?<datasource>\\S+)\\s+depName=(?<depName>\\S+)"
             ],
-            "matchStringsStrategy": "any"
+            "versioningTemplate": "docker"
         }
     ],
-    "description": "Package Rules for Splunk Docker images",
     "packageRules": [
         {
+            "description": "Package Rules for Splunk Docker images",
             "matchDatasources": [ "docker" ],
             "matchPackageNames": [ "splunk/splunk" ],
             "separateMinorPatch": true,
