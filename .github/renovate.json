@@ -23,7 +23,8 @@
             "description": "Package Rules for Splunk Docker images",
             "matchDatasources": [ "docker" ],
             "matchPackageNames": [ "splunk/splunk" ],
-            "separateMinorPatch": true,
+            "matchUpdateTypes": [ "major", "minor" ],
+            "dependencyDashboardApproval": true,
             "groupName": "splunk releases"
         }
     ]
