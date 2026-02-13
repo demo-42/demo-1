@@ -3,8 +3,9 @@
     "extends": [ "config:recommended" ],
     "baseBranches": [ "main" ],
     "rebaseWhen": "conflicted",
-    "labels": [ "dependencies" ],
+    "labels": [ "dependency-update" ],
     "dependencyDashboard": true,
+    "reviewersFromCodeOwners": true,
     "customManagers": [
         {
             "customType": "regex",
@@ -12,10 +13,12 @@
                 "^\\.github/workflows/.+\\.ya?ml$"
             ],
             "matchStrings": [
-                "-\\s+\"(?<currentValue>[^\\s]+)\"\\s+#\\s+renovate:\\s+datasource=(?<datasource>[^\\s]+)\\s+depName=(?<depName>[^\\s]+)(?:\\s+versioning=(?<versioning>[^\\s]+))?"
-            ]
+                "-\\s+\"(?<currentValue>[^\\s]+)\"\\s+#\\s+renovate:\\s+datasource=(?<datasource>[^\\s]+)\\s+depName=(?<depName>[^\\s]+)"
+            ],
+            "datasourceTemplate": "docker"
         }
     ],
+    // Apply a rule only for packages matching the following criteria
     "packageRules": [
         {
             "matchDatasources": [ "docker" ],
