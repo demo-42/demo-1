@@ -14,9 +14,8 @@ jobs:
       fail-fast: false
       matrix:
         version:
-          - "9.4.1" # renovate: datasource=docker depName=splunk/splunk versioning=docker
-          # Use versioning='loose' if you want to pick up non-standard or alpha/beta tags
-          - "9.3.3" # renovate: datasource=docker depName=splunk/splunk versioning=docker
+          - "9.4.1" # renovate: datasource=docker depName=splunk/splunk
+          - "9.3.3" # renovate: datasource=docker depName=splunk/splunk
     services:
       splunk:
         image: splunk/splunk:${{ matrix.version }}
