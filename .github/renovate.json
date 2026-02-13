@@ -3,7 +3,7 @@
     "extends": [
         "config:base"
     ],
-    "customManagers": [
+    "regexManagers": [
         {
             "customType": "regex",
             "fileMatch": [
@@ -12,6 +12,18 @@
             "matchStrings": [
                 "datasource=(?<datasource>\\S+) depName=(?<depName>\\S+)( versioning=(?<versioning>\\S+))?\\s+-\\s+[\"']?(?<currentValue>\\S+?)[\"']?\\s"
             ]
+        }
+    ],
+    "packageRules": [
+        {
+            "matchDatasources": [
+                "docker"
+            ],
+            "matchPackageNames": [
+                "splunk/splunk"
+            ],
+            "separateMinorPatch": true,
+            "groupName": "splunk versions"
         }
     ]
 }
