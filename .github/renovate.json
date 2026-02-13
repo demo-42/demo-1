@@ -3,10 +3,11 @@
     "extends": [
         "config:base"
     ],
-    "regexManagers": [
+    "dependencyDashboard": true,
+    "customManagers": [
         {
             "customType": "regex",
-            "fileMatch": [
+            "managerFilePatterns": [
                 "^\\.github/workflows/.+\\.ya?ml$"
             ],
             "matchStrings": [
