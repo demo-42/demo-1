@@ -3,6 +3,9 @@
     "extends": [
         "config:base"
     ],
+    "baseBranches": [ "main" ],
+    "rebaseWhen": "conflicted",
+    "labels": [ "dependencies" ],
     "dependencyDashboard": true,
     "customManagers": [
         {
@@ -11,20 +14,16 @@
                 "^\\.github/workflows/.+\\.ya?ml$"
             ],
             "matchStrings": [
-                "datasource=(?<datasource>\\S+) depName=(?<depName>\\S+)( versioning=(?<versioning>\\S+))?\\s+-\\s+[\"']?(?<currentValue>\\S+?)[\"']?\\s"
+                "-\\s+[\"']?(?<currentValue>[^\"'\\s]+)[\"']?\\s+#\\s+renovate:\\s+datasource=(?<datasource>[^\\s]+)\\s+depName=(?<depName>[^\\s]+)(?:\\s+versioning=(?<versioning>[^\\s]+))?"
             ]
         }
     ],
     "packageRules": [
         {
-            "matchDatasources": [
-                "docker"
-            ],
-            "matchPackageNames": [
-                "splunk/splunk"
-            ],
+            "matchDatasources": [ "docker" ],
+            "matchPackageNames": [ "splunk/splunk" ],
             "separateMinorPatch": true,
-            "groupName": "splunk versions"
+            "groupName": "splunk releases"
         }
     ]
 }
