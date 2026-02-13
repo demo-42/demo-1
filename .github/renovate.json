@@ -19,7 +19,6 @@
         }
     ],
     "description": "Package Rules for Splunk Docker images",
-    // Apply a rule only for packages matching the following criteria
     "packageRules": [
         {
             "matchDatasources": [ "docker" ],
