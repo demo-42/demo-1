@@ -54,22 +54,6 @@
             "groupName": "Splunk 9.4.x Patches"
         },
         {
-            "description": "Block 9.3.x minor/major updates - show in dashboard",
-            "matchDatasources": [
-                "docker"
-            ],
-            "matchPackageNames": [
-                "splunk/splunk"
-            ],
-            "matchCurrentVersion": "/^9\\.3\\./",
-            "matchUpdateTypes": [
-                "minor",
-                "major"
-            ],
-            "dependencyDashboardApproval": true,
-            "groupName": "Splunk 9.3.x Major/Minor Available"
-        },
-        {
             "description": "Block 9.4.x minor/major updates - show in dashboard",
             "matchDatasources": [
                 "docker"
