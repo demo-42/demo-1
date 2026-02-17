@@ -33,9 +33,6 @@
             "matchPackageNames": [
                 "splunk/splunk"
             ],
-            "matchUpdateTypes": [
-                "patch"
-            ],
             "matchCurrentVersion": "/^9\\.3\\./",
             "allowedVersions": "9.3.x",
             "groupName": "Splunk 9.3.x Patches"
@@ -47,9 +44,6 @@
             ],
             "matchPackageNames": [
                 "splunk/splunk"
-            ],
-            "matchUpdateTypes": [
-                "patch"
             ],
             "matchCurrentVersion": "/^9\\.4\\./",
             "allowedVersions": "9.4.x",
