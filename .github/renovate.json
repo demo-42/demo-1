@@ -64,7 +64,6 @@
                 "minor",
                 "major"
             ],
-            "dependencyDashboardApproval": true,
             "groupName": "Splunk 9.4.x Major/Minor Available"
         }
     ]
