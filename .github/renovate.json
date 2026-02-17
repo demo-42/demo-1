@@ -1,16 +1,22 @@
 {
     "$schema": "https://docs.renovatebot.com/renovate-schema.json",
-    "extends": [ "config:recommended" ],
-    "baseBranches": [ "main" ],
+    "extends": [
+        "config:recommended"
+    ],
+    "baseBranchPatterns": [
+        "main"
+    ],
     "rebaseWhen": "conflicted",
-    "labels": [ "dependency-update" ],
+    "labels": [
+        "dependency-update"
+    ],
     "dependencyDashboard": true,
     "reviewersFromCodeOwners": true,
     "customManagers": [
         {
             "customType": "regex",
-            "fileMatch": [
-                "^\\.github/workflows/.+\\.ya?ml$"
+            "managerFilePatterns": [
+                "/^\\.github/workflows/.+\\.ya?ml$/"
             ],
             "matchStrings": [
                 "-\\s+\"(?<currentValue>[^\"]+)\"\\s+#\\s+renovate:\\s+datasource=(?<datasource>\\S+)\\s+depName=(?<depName>\\S+)"
