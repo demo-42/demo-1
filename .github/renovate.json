@@ -1,9 +1,15 @@
 {
     "$schema": "https://docs.renovatebot.com/renovate-schema.json",
-    "extends": [ "config:recommended" ],
-    "baseBranches": [ "main" ],
+    "extends": [
+        "config:recommended"
+    ],
+    "baseBranches": [
+        "main"
+    ],
     "rebaseWhen": "conflicted",
-    "labels": [ "dependency-update" ],
+    "labels": [
+        "dependency-update"
+    ],
     "dependencyDashboard": true,
     "reviewersFromCodeOwners": true,
     "customManagers": [
@@ -20,18 +26,28 @@
     ],
     "packageRules": [
         {
-            "description": "Open PR of Splunk Docker minor / patch releases",
+            "description": "Keep 9.3.x line within 9.3 patches only",
             "matchDatasources": [
                 "docker"
             ],
             "matchPackageNames": [
                 "splunk/splunk"
             ],
-            "matchUpdateTypes": [
-                "minor",
-                "patch"
+            "matchCurrentVersion": "/^9\\.3\\./",
+            "allowedVersions": "9.3.x",
+            "groupName": "Splunk 9.3.x Patches"
+        },
+        {
+            "description": "Keep 9.4.x line within 9.4 patches only",
+            "matchDatasources": [
+                "docker"
             ],
-            "groupName": "Splunk Minor and Patch Releases"
+            "matchPackageNames": [
+                "splunk/splunk"
+            ],
+            "matchCurrentVersion": "/^9\\.4\\./",
+            "allowedVersions": "9.4.x",
+            "groupName": "Splunk 9.4.x Patches"
         },
         {
             "description": "Notify about new Splunk Docker major releases via Dependency Dashboard",
@@ -42,7 +58,8 @@
                 "splunk/splunk"
             ],
             "matchUpdateTypes": [
-                "major"
+                "major",
+                "minor"
             ],
             "dependencyDashboardApproval": true,
             "groupName": "Splunk Major Releases"
