@@ -26,7 +26,7 @@
     ],
     "packageRules": [
         {
-            "description": "Keep 9.3.x line within 9.3 patches only",
+            "description": "Auto-update 9.3.x patches only",
             "matchDatasources": [
                 "docker"
             ],
@@ -34,11 +34,13 @@
                 "splunk/splunk"
             ],
             "matchCurrentVersion": "/^9\\.3\\./",
-            "allowedVersions": "9.3.x",
+            "matchUpdateTypes": [
+                "patch"
+            ],
             "groupName": "Splunk 9.3.x Patches"
         },
         {
-            "description": "Keep 9.4.x line within 9.4 patches only",
+            "description": "Auto-update 9.4.x patches only",
             "matchDatasources": [
                 "docker"
             ],
@@ -46,23 +48,42 @@
                 "splunk/splunk"
             ],
             "matchCurrentVersion": "/^9\\.4\\./",
-            "allowedVersions": "9.4.x",
+            "matchUpdateTypes": [
+                "patch"
+            ],
             "groupName": "Splunk 9.4.x Patches"
         },
         {
-            "description": "Notify about new Splunk Docker major releases via Dependency Dashboard",
+            "description": "Block 9.3.x minor/major updates - show in dashboard",
             "matchDatasources": [
                 "docker"
             ],
             "matchPackageNames": [
                 "splunk/splunk"
             ],
+            "matchCurrentVersion": "/^9\\.3\\./",
             "matchUpdateTypes": [
-                "major",
-                "minor"
+                "minor",
+                "major"
             ],
             "dependencyDashboardApproval": true,
-            "groupName": "Splunk Major/Minor Releases"
+            "groupName": "Splunk 9.3.x Major/Minor Available"
+        },
+        {
+            "description": "Block 9.4.x minor/major updates - show in dashboard",
+            "matchDatasources": [
+                "docker"
+            ],
+            "matchPackageNames": [
+                "splunk/splunk"
+            ],
+            "matchCurrentVersion": "/^9\\.4\\./",
+            "matchUpdateTypes": [
+                "minor",
+                "major"
+            ],
+            "dependencyDashboardApproval": true,
+            "groupName": "Splunk 9.4.x Major/Minor Available"
         }
     ]
 }
