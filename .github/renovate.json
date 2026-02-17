@@ -20,7 +20,7 @@
     ],
     "packageRules": [
         {
-            "description": "Open PR of Splunk Docker minor releases",
+            "description": "Open PR of Splunk Docker minor / patch releases",
             "matchDatasources": [
                 "docker"
             ],
@@ -28,9 +28,10 @@
                 "splunk/splunk"
             ],
             "matchUpdateTypes": [
-                "minor"
+                "minor",
+                "patch"
             ],
-            "groupName": "Splunk Minor Releases"
+            "groupName": "Splunk Minor and Patch Releases"
         },
         {
             "description": "Notify about new Splunk Docker major releases via Dependency Dashboard",
