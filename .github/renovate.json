@@ -9,8 +9,8 @@
     "customManagers": [
         {
             "customType": "regex",
-            "fileMatch": [
-                "^\\.github/workflows/.+\\.ya?ml$"
+            "managerFilePatterns": [
+                "/^\\.github/workflows/.+\\.ya?ml$/"
             ],
             "matchStrings": [
                 "-\\s+\"(?<currentValue>[^\"]+)\"\\s+#\\s+renovate:\\s+datasource=(?<datasource>\\S+)\\s+depName=(?<depName>\\S+)"
