@@ -26,7 +26,7 @@
     ],
     "packageRules": [
         {
-            "description": "Auto-update 9.3.x patches only",
+            "description": "Keep 9.3.x line within 9.3 patches only",
             "matchDatasources": [
                 "docker"
             ],
@@ -34,9 +34,6 @@
                 "splunk/splunk"
             ],
             "matchCurrentVersion": "/^9\\.3\\./",
-            "matchUpdateTypes": [
-                "patch"
-            ],
             "allowedVersions": "9.3.x",
             "groupName": "Splunk 9.3.x Patches"
         },
