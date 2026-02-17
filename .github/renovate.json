@@ -3,7 +3,7 @@
     "extends": [
         "config:recommended"
     ],
-    "baseBranches": [
+    "baseBranchPatterns": [
         "main"
     ],
     "rebaseWhen": "conflicted",
@@ -57,12 +57,8 @@
             "matchPackageNames": [
                 "splunk/splunk"
             ],
-            "matchUpdateTypes": [
-                "major",
-                "minor"
-            ],
             "dependencyDashboardApproval": true,
-            "groupName": "Splunk Major Releases"
+            "groupName": "Splunk Major/Minor Releases"
         }
     ]
 }
