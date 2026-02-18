@@ -10,7 +10,7 @@
     "labels": [
         "dependency-update"
     ],
-    "dependencyDashboard": false,
+    "dependencyDashboard": true,
     "reviewersFromCodeOwners": true,
     "assigneesFromCodeOwners": true,
     "customManagers": [
