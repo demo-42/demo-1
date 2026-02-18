@@ -12,6 +12,7 @@
     ],
     "dependencyDashboard": false,
     "reviewersFromCodeOwners": true,
+    "assigneesFromCodeOwners": true,
     "customManagers": [
         {
             "customType": "regex",
