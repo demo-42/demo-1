@@ -11,7 +11,7 @@ jobs:
     name: Renovate
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v4
+      - uses: actions/checkout@v6
       - name: Validate Renovate JSON
         run: jq type .github/renovate.json
       - name: Self-hosted Renovate
